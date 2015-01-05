@@ -1,3 +1,4 @@
+flask-iniconfig==0.0.3
 flask-sqlalchemy==2.0
 Flask==0.10.1
 pylint==1.4.0
