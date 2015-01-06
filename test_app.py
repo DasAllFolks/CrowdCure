@@ -12,7 +12,8 @@ with app.app_context():
 
 @app.route('/')
 def return_config():
-  return app.config
+  print('Config: %s' % app.config)
+  return str(app.config)
 
 
 if __name__ == '__main__':
