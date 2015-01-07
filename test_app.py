@@ -11,11 +11,11 @@ with app.app_context():
   app.config.from_inifile('settings.ini')
 
 def connect_db():
-  return sqlite3.connect(app.config['DATABASE'])
+  return sqlite3.connect(app.config['database']['DATABASE'])
 
 @app.route('/')
 def print_db():
-  return app.config['DATABASE']
+  return app.config['database']['DATABASE']
 
 if __name__ == '__main__':
   app.run()
