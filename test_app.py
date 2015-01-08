@@ -13,9 +13,5 @@ with app.app_context():
 def connect_db():
   return sqlite3.connect(app.config['database']['DATABASE'])
 
-@app.route('/')
-def print_db():
-  return app.config['database']['DATABASE']
-
 if __name__ == '__main__':
   app.run()
