@@ -1,3 +1,5 @@
+from contextlib import closing
+
 from flask import Flask
 from flask.ext.iniconfig import INIConfig
 import sqlite3
