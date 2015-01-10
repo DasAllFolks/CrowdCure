@@ -21,5 +21,13 @@ def init_db():
       db.cursor().executescript(f.read())
     db.commit()
 
+## Views.
+
+@app.route('/create-report/', methods=['GET', 'POST'])
+def create_report():
+  # XXXX: Start figuring out how to make this work...
+  pass
+
+
 if __name__ == '__main__':
   app.run()
