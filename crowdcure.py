@@ -30,8 +30,11 @@ def init_db():
 
 @app.route('/create-report/', methods=['GET', 'POST'])
 def create_report():
-  # XXXX: Start figuring out how to make this work...
-  pass
+  # XXXX: How to ONLY open the db on POST requests?
+  # XXXX: Should I create a separate view for GET only?
+  db = connect_db()
+  # XXXX: How to start integrating all of this with templates?
+  db.close()
 
 
 ## Debugging/running support.
