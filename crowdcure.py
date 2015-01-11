@@ -28,6 +28,14 @@ def init_db():
 
 ## Views.
 
+@app.route('/test/', methods=['GET'])
+def test_get():
+  return 'Successful GET'
+
+@app.route('/test/', methods=['POST'])
+def test_get():
+  return 'Successful POST'
+
 @app.route('/create-report/', methods=['GET', 'POST'])
 def create_report():
   # XXXX: How to ONLY open the db on POST requests?
