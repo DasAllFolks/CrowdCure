@@ -30,11 +30,11 @@ def init_db():
 
 @app.route('/test/', methods=['GET'])
 def test_get():
-  return 'Successful GET'
+  return 'Successful GET\n'
 
 @app.route('/test/', methods=['POST'])
 def test_post():
-  return 'Successful POST'
+  return 'Successful POST\n'
 
 @app.route('/create-report/', methods=['GET', 'POST'])
 def create_report():
