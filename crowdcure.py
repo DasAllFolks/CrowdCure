@@ -33,7 +33,7 @@ def test_get():
   return 'Successful GET'
 
 @app.route('/test/', methods=['POST'])
-def test_get():
+def test_post():
   return 'Successful POST'
 
 @app.route('/create-report/', methods=['GET', 'POST'])
