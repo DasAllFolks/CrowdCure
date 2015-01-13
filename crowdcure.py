@@ -1,6 +1,7 @@
 from contextlib import closing
 
 from flask import Flask
+from flask import render_template
 from flask.ext.iniconfig import INIConfig
 import sqlite3
 
@@ -28,6 +29,16 @@ def init_db():
 
 ## Views.
 
+@app.route('/create-report/', methods=['GET'])
+def create_report_get():
+  return render_template('create_report.html')
+
+@app.route('/create-report/', methods=['POST'])
+def create_report_post():
+  db = connect_db()
+  # XXXX: And then I suppose create the database record here?
+  db.close()
+
 @app.route('/test/', methods=['GET'])
 def test_get():
   return 'Successful GET\n'
@@ -35,14 +46,6 @@ def test_get():
 @app.route('/test/', methods=['POST'])
 def test_post():
   return 'Successful POST\n'
-
-@app.route('/create-report/', methods=['GET', 'POST'])
-def create_report():
-  # XXXX: How to ONLY open the db on POST requests?
-  # XXXX: Should I create a separate view for GET only?
-  db = connect_db()
-  # XXXX: How to start integrating all of this with templates?
-  db.close()
 
 
 ## Debugging/running support.
