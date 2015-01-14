@@ -45,7 +45,7 @@ def test_get():
 
 @app.route('/test/', methods=['POST'])
 def test_post():
-  return 'Successful POST\n'
+  return request
 
 
 ## Debugging/running support.
