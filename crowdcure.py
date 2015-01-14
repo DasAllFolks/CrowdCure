@@ -45,7 +45,7 @@ def test_get():
 
 @app.route('/test/', methods=['POST'])
 def test_post():
-  return request
+  return unicode(request)
 
 
 ## Debugging/running support.
