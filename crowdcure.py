@@ -46,7 +46,8 @@ def test_get():
 
 @app.route('/test/', methods=['POST'])
 def test_post():
-  return unicode(request)
+  if request.method == 'POST':
+    return 'Successful POST'
 
 
 ## Debugging/running support.
