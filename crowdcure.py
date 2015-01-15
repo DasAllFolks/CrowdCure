@@ -40,12 +40,12 @@ def create_report_post():
 
 @app.route('/test/', methods=['GET'])
 def test_get():
-  if request.method == 'GET':
+  if flask.request.method == 'GET':
     return 'Successful GET\n'
 
 @app.route('/test/', methods=['POST'])
 def test_post():
-  if request.method == 'POST':
+  if flask.request.method == 'POST':
     return 'Successful POST'
 
 
