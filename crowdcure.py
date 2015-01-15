@@ -46,7 +46,7 @@ def test_get():
 @app.route('/test/', methods=['POST'])
 def test_post():
   if flask.request.method == 'POST':
-    return 'Successful POST'
+    return 'Successful POST\n'
 
 
 ## Debugging/running support.
