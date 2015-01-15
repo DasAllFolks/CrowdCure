@@ -41,7 +41,8 @@ def create_report_post():
 
 @app.route('/test/', methods=['GET'])
 def test_get():
-  return 'Successful GET\n'
+  if request.method == 'GET':
+    return 'Successful GET\n'
 
 @app.route('/test/', methods=['POST'])
 def test_post():
