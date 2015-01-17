@@ -36,8 +36,7 @@ def create_report_get():
 def create_report_post():
   # db = connect_db()
   # XXXX: And then I suppose create the database record here?
-  print(flask.request)
-  print(flask.request.form)
+  return 'Echo!\n%s' % flask.request.form
   # db.close()
 
 @app.route('/test/', methods=['GET'])
