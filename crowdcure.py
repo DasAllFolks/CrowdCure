@@ -1,4 +1,5 @@
 from contextlib import closing
+import time
 
 import flask
 from flask.ext.iniconfig import INIConfig
@@ -34,10 +35,15 @@ def create_report_get():
 
 @app.route('/create-report/', methods=['POST'])
 def create_report_post():
-  # db = connect_db()
-  # XXXX: And then I suppose create the database record here?
-  return 'Echo!\n%s' % flask.request.form
-  # db.close()
+  db = connect_db()
+  db.execute(
+    'insert into locations (latitude, longitude, timestamp) values (?, ?, ?)',
+    flask.request.form['latitude'],
+    flask.request.form['longitude'],
+    int(time.time()))
+  db.commit()
+  db.close()
+  return 'Database record should be created!'
 
 @app.route('/test/', methods=['GET'])
 def test_get():
