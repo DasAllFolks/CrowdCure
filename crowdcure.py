@@ -35,7 +35,6 @@ def create_report_get():
 
 @app.route('/create-report/', methods=['POST'])
 def create_report_post():
-  # XXXX: Uncomment and add database stuff next!
   # db = connect_db()
   # db.execute(
   #  'insert into locations (latitude, longitude, timestamp) values (?, ?, ?)',
@@ -45,7 +44,7 @@ def create_report_post():
   # db.commit()
   # db.close()
   # return 'Database record should be created!'
-  return '({latitude}, {longitude})'.format(
+  return 'Added the following to database: {latitude}, {longitude}'.format(
     latitude=flask.request.form['latitude'],
     longitude=flask.request.form['longitude'],
   )
