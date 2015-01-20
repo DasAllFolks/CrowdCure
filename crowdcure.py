@@ -37,10 +37,12 @@ def create_report_get():
 def create_report_post():
   db = connect_db()
   db.execute(
-   'insert into locations (latitude, longitude, timestamp) values (?, ?, ?)',
-   flask.request.form['latitude'],
-   flask.request.form['longitude'],
-   int(time.time()),
+    'insert into locations (latitude, longitude, timestamp) values (?, ?, ?)',
+    (
+      flask.request.form['latitude'],
+      flask.request.form['longitude'],
+      int(time.time()),
+    ),
   )
   db.commit()
   db.close()
