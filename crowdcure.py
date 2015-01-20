@@ -18,7 +18,7 @@ with app.app_context():
 ## Database stuff.
 
 def connect_db():
-  return sqlite3.connect(app.config['database']['DATABASE'])
+  return sqlite3.connect(app.config['database']['NAME'])
 
 def init_db():
   with closing(connect_db()) as db:
